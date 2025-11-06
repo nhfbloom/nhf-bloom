@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - NHF Bloom</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff8f5;
+      margin: 0;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #e9b8a6;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>📋 Data Pembeli - NHF Bloom</h2>
+  <table id="tablePembeli">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Alamat</th>
+        <th>Metode</th>
+        <th>Tanggal</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    let dataPembeli = JSON.parse(localStorage.getItem("dataPembeli")) || [];
+    let tbody = document.querySelector("#tablePembeli tbody");
+
+    dataPembeli.forEach(p => {
+      let row = `<tr>
+        <td>${p.nama}</td>
+        <td>${p.email}</td>
+        <td>${p.alamat}</td>
+        <td>${p.metode}</td>
+        <td>${p.tanggal}</td>
+      </tr>`;
+      tbody.innerHTML += row;
+    });
+  </script>
+</body>
+</html>

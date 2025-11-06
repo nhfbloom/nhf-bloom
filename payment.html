@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran | NHF Bloom</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff9f9;
+      color: #3d3d3d;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #f3d9da;
+      text-align: center;
+      padding: 20px;
+      color: #b56b6b;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    h2 {
+      color: #b56b6b;
+      margin-bottom: 20px;
+    }
+    .payment-methods img {
+      width: 100px;
+      margin: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .payment-methods img:hover {
+      transform: scale(1.1);
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      border: none;
+      background-color: #b56b6b;
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a75a5a;
+    }
+  </style>
+</head>
+<body>
+  <header>NHF Bloom – Pembayaran</header>
+
+  <div class="container">
+    <h2>Pilih Metode Pembayaran</h2>
+    <div class="payment-methods">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Logo_dana_blue.svg" alt="DANA">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Logo_OVO_purple.svg" alt="OVO">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Gopay_logo.svg" alt="GoPay">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Visa_Inc._logo.svg" alt="Kartu Kredit">
+    </div>
+    <p style="margin-top: 20px;">Setelah pembayaran berhasil, pesananmu akan segera diproses 💖</p>
+    <button onclick="finishPayment()">Selesai</button>
+  </div>
+
+  <script>
+    function finishPayment() {
+      alert("Pembayaran berhasil! Terima kasih sudah berbelanja di NHF Bloom 💕");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

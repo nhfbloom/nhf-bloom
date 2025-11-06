@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | NHF Bloom</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #fff9f9;
+      color: #3d3d3d;
+    }
+
+    header {
+      background-color: #f3d9da;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      color: #b56b6b;
+      font-size: 28px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #3d3d3d;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #b56b6b;
+    }
+
+    .blog-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .blog-section h2 {
+      font-family: "Playfair Display", serif;
+      color: #b56b6b;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 30px;
+    }
+
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .blog-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    .blog-content h3 {
+      font-size: 18px;
+      color: #b56b6b;
+      margin-bottom: 10px;
+    }
+
+    .blog-content p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .read-more {
+      text-decoration: none;
+      color: #b56b6b;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f3d9da;
+      color: #5c5c5c;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NHF Bloom</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="blog.html" style="color:#b56b6b;">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="blog-section">
+    <h2>Tips & Promo Kecantikan</h2>
+
+    <div class="blog-container">
+      <div class="blog-card">
+        <img src="images/blog1.jpg" alt="Tips Skincare">
+        <div class="blog-content">
+          <h3>5 Langkah Skincare Pagi Agar Wajah Glowing</h3>
+          <p>Mulailah hari dengan perawatan lembut dari SK-II atau Skin1004. Pelajari urutan skincare yang benar agar wajah tampak segar sepanjang hari.</p>
+          <a href="#" class="read-more">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="images/blog2.jpg" alt="Promo Fashion">
+        <div class="blog-content">
+          <h3>Promo Fashion Akhir Tahun hingga 50%</h3>
+          <p>Yuk tampil menawan dengan koleksi baru dari Zara, Uniqlo, dan Bershka! Dapatkan diskon eksklusif hanya di NHF Bloom.</p>
+          <a href="#" class="read-more">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="images/blog3.jpg" alt="Makeup Natural">
+        <div class="blog-content">
+          <h3>Tampil Cantik Natural dengan Esqa & Wardah</h3>
+          <p>Tren makeup 2025 adalah tampilan natural dan effortless. Simak produk favorit untuk look yang segar dan menawan setiap hari.</p>
+          <a href="#" class="read-more">Baca Selengkapnya →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 NHF Bloom | All rights reserved</p>
+  </footer>
+</body>
+</html>

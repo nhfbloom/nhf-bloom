@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang Belanja | NHF Bloom</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff8f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #e9b8a6;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+    }
+
+    h2 {
+      color: #b56b6b;
+      text-align: center;
+      font-family: "Playfair Display", serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #f3d9da;
+      padding: 10px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    th {
+      background-color: #fbeaec;
+      color: #b56b6b;
+    }
+
+    button {
+      background-color: #e9b8a6;
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #d49e8d;
+    }
+
+    .checkout {
+      display: block;
+      margin: 25px auto 0;
+      background-color: #b56b6b;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .checkout:hover {
+      background-color: #a35c5c;
+    }
+
+    .empty {
+      text-align: center;
+      color: #777;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #e9b8a6;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>🛍️ Keranjang NHF Bloom</header>
+
+  <div class="cart-container">
+    <h2>Produk di Keranjang</h2>
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Produk</th>
+          <th>Harga</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div id="totalPrice" style="text-align:center; margin-top:20px; font-weight:600; color:#b56b6b;"></div>
+
+    <button class="checkout" onclick="goToPayment()">Lanjut ke Pembayaran 💳</button>
+  </div>
+
+  <footer>© 2025 NHF Bloom | All rights reserved</footer>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      const tbody = document.querySelector("#cartTable tbody");
+      const totalDiv = document.getElementById("totalPrice");
+      tbody.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" class="empty">Keranjang masih kosong 💔</td></tr>';
+        totalDiv.innerHTML = "";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        const row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${item.name}</td>
+            <td>Rp ${item.price.toLocaleString()}</td>
+            <td><button onclick="removeItem(${index})">Hapus</button></td>
+          </tr>`;
+        tbody.innerHTML += row;
+      });
+
+      totalDiv.innerHTML = `Total Belanja: <b>Rp ${total.toLocaleString()}</b>`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function goToPayment() {
+      if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+      }
+      window.location.href = "payment.html";
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
